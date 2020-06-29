@@ -17,8 +17,8 @@ config_kernel_IP_forwarding() {
 config_pptp() {
   sudo sed -i 's/#localip 192.168.0.1/localip 192.168.0.1/g' /etc/pptpd.conf
   sudo sed -i 's/#remoteip 192.168.0.234-238,192.168.0.245/remoteip 192.168.0.234-238,192.168.0.245/g' /etc/pptpd.conf 
-  sudo sed -i 's/#ms-dns 10.0.0.1/ms-dns 8.8.8.8/g' /etc/ppp/pptpd-options
-  sudo sed -i 's/#ms-dns 10.0.0.2/ms-dns 8.8.4.4/g' /etc/ppp/pptpd-options
+  sudo sed -i 's/#ms-dns 10.0.0.1/ms-dns 1.1.1.1/g' /etc/ppp/pptpd-options
+  sudo sed -i 's/#ms-dns 10.0.0.2/ms-dns 1.0.0.1/g' /etc/ppp/pptpd-options
   sudo echo "$username  pptpd  \"$password\"  *" >> /etc/ppp/chap-secrets
 }
 
